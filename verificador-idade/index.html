@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+    <section>
+        <div>
+                <p>Ano de nascimento:
+                    <input type="number" min="0" max="150" id="ano">
+                </p>
+    
+                <p>Sexo:
+                    <input type="radio" name="sexo" id="masc" checked>
+                    <label for="masc">Masculino</label>
+                    <input type="radio" name="sexo" id="fem"> <!--o nome deve ser o mesmo para marcar somente um sexo -->
+                    <label for="fem">Feminino</label>
+                </p>
+
+                <input type="button" value="Verificar" onclick="verificar()">
+        </div>
+        <div id="res">
+            <p>Preencha os dados acima para ver o resultado...</p>
+            
+        </div>
+    </section>
+    <footer>
+        <p>Criado por Edilaine Santos</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
