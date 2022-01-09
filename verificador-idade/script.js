@@ -15,8 +15,6 @@ function verificar(){
 
             anoUser = Number(anoUser)
             var idade = ano - anoUser
-            
-            img.innerHTML = `<img id="img" src="Imagens/adulto-f.png" alt="Mulher adulta"></img>`
 
             if(sexo[0].checked){
                     if(idade>=0 && idade<=2 ){
