@@ -21,7 +21,7 @@ const setLocalStorage = (dbClient) =>
   localStorage.setItem("db_client", JSON.stringify(dbClient));
 
 //create
-const createCliente = (client) => {
+const createClient = (client) => {
   /*const db_client = [] //declarando como array (não funciona pois o dado é substituído)*/
   const dbClient = getLocalStorage(); //nessa função, eu estou adicionando dentro do array, e transformando o que está sendo recebido em um objeto, pois para a linha abaixo ser executada, eu preciso pegar um objeto pra transformar em um valor e adicionar no banco
   //?? [] significa: se isso não existir, me retorna um array vazio
@@ -49,7 +49,24 @@ const deleteClient = (index) =>{
     const dbClient = readClient()
     dbClient.splice(index,1) //1 é de avançar uma casa, se eu colocar 2, ele vai excluir os dois proximos do index passado como parametro
     setLocalStorage(dbClient)
-} 
+}
+
+const isValidFields = () =>{
+    return document.getElementById('form').reportValidity() //retornando se campos foram preenchidos ou não
+}
+
+//interações
+const saveClient = () =>{
+    if(isValidFields()){ //só cadastra se a função voltar como verdadeira
+        const client = {
+            nome: document.getElementById('nome').value,
+            email: document.getElementById('email').value,
+            celular: document.getElementById('cel').value,
+            cidade: document.getElementById('cidade').value
+        }
+        createClient(client)
+    }
+}
 
 //Eventos
 document
@@ -61,3 +78,6 @@ document.getElementById("modalClose").addEventListener("click", closeModal);
 document
   .getElementById("modalCloseButton")
   .addEventListener("click", closeModalButton);
+
+document.getElementById('salvar')
+    .addEventListener('click', saveClient)
