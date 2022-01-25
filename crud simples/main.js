@@ -42,12 +42,14 @@ const updateClient = (index, client) =>{
     dbClient[index] = client //index recebe novo cliente
     setLocalStorage(dbClient)
 
-} //essa função recebe meu index (id vai de 0 a ...) como parametro
+} //essa função recebe meu index (id vai de 0 a ...) como parametro pra saber quem editar
 
 //delete
-const deleteClient = () =>{
-    
-}
+const deleteClient = (index) =>{
+    const dbClient = readClient()
+    dbClient.splice(index,1) //1 é de avançar uma casa, se eu colocar 2, ele vai excluir os dois proximos do index passado como parametro
+    setLocalStorage(dbClient)
+} 
 
 //Eventos
 document
