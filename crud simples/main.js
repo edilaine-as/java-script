@@ -82,6 +82,7 @@ const clearFields = () => {
 /******************************/
 /*SALVAR***********************/
 /******************************/
+
 const saveClient = () => {
   if (isValidFields()) {
     //só cadastra se a função voltar como verdadeira
@@ -95,7 +96,7 @@ const saveClient = () => {
     const index = document.getElementById("nome").dataset.index;
     if (index == "new") {
       createClient(client); //envia pro localstorage com função que criei
-      updateClient();
+      updateTable();
       closeModal();
     } else {
       updateClient(index, client);
