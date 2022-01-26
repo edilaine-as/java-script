@@ -5,6 +5,7 @@
 }
 
 .records th{
+    color: white;
     height: 50px;
     background-color: var(--primary-color);
     padding-left: 20px;
