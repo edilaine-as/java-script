@@ -19,14 +19,14 @@ const closeModalButton = () => {
 const getLocalStorage = () =>
   JSON.parse(localStorage.getItem("db_client")) ?? [];
 //get recebe
-//nessa função, eu estou adicionando, e transformando o que está sendo recebido em um objeto
+//nessa função, eu estou recebendo, e transformando o que está sendo recebido em um objeto
 //?? [] significa: se isso não existir, me retorna um array vazio
 
 const setLocalStorage = (dbClient) =>
   localStorage.setItem("db_client", JSON.stringify(dbClient));
 //set envia
 //eu envio uma key (db_client) e um value (client)
-//o JSON.stingfy vai transformar meu objeto (tempCliente) em um valor
+//o JSON.stingfy vai transformar meu objeto em um valor
 
 const isValidFields = () => {
   return document.getElementById("form").reportValidity(); //retornando se campos foram preenchidos ou não
@@ -111,8 +111,7 @@ const saveClient = () => {
 /******************************/
 const createRow = (client, index) => {
   const newRow = document.createElement("tr");
-  newRow.innerHTML = `
-                    <td>${client.nome}</td>
+  newRow.innerHTML = `<td>${client.nome}</td>
                     <td>${client.email}</td>
                     <td>${client.celular}</td>
                     <td>${client.cidade}</td>
@@ -138,7 +137,7 @@ const updateTable = () => {
 };
 
 /******************************/
-/*EDITAR E REMOVER**************/
+/*EDITAR E REMOVER*************/
 /******************************/
 const fillFields = (client) => {
   document.getElementById("nome").value = client.nome;
@@ -180,9 +179,37 @@ const editDelete = (event) => {
 
 updateTable();
 
+/******************************/
+/*BUSCAR***********************/
+/******************************/
+
+document.getElementById("txtSearch").addEventListener("keyup", function () {
+  const busca = document.getElementById("txtSearch").value.toLowerCase();
+
+  for (const i = 0; i < tbody.childNodes.length; i++) {
+    const achou = false;
+    const tr = tbody.childNodes[i];
+    const td = tr.childNodes;
+
+    for (const j = 0; j < td.length; j++) {
+      const value = td[j].childNodes[0].nodeValue.toLowerCase();
+      if (value.indexOf(busca) >= 0) {
+        //indexOf procura uma ocorrencia
+        achou = true;
+      }
+    }
+    if (achou) {
+      tr.style.display = "table-row";
+    } else {
+      tr.style.display = "none";
+    }
+  }
+});
+
 /*********************************************************************************************/
 /*EVENTOS*************************************************************************************/
 /*********************************************************************************************/
+
 document
   .getElementById("cadastrarCliente")
   .addEventListener("click", openModal);
