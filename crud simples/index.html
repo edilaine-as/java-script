@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"> <!--font awesome -->
+
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/button.css" />
     <link rel="stylesheet" href="css/records.css" />
     <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/search.css">
     <script src="main.js" defer></script>
     <title>CRUD</title>
   </head>
@@ -21,9 +25,15 @@
       <h1 class="header-title">Cadastro de Clientes</h1>
     </header>
     <main>
-      <button type="button" class="button blue mobile" id="cadastrarCliente">
-        Cadastrar Cliente
-      </button>
+      <div class="buttons">
+        <button type="button" class="button blue mobile" id="cadastrarCliente">
+          Cadastrar Cliente
+        </button>
+        <div class="search-container">
+          <input type="search" placeholder="Buscar...">
+          <button id="btn-search" type="button"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
       <table id="tableClient" class="records">
         <thead>
           <tr>
@@ -31,7 +41,6 @@
             <th>E-mail</th>
             <th>Celular</th>
             <th>Cidade</th>
-            <th>Ação</th>
           </tr>
         </thead>
         <tbody>
