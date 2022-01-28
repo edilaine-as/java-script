@@ -184,15 +184,15 @@ updateTable();
 /******************************/
 
 document.getElementById("txtSearch").addEventListener("keyup", function () {
-  const busca = document.getElementById("txtSearch").value.toLowerCase();
+  let busca = document.getElementById("txtSearch").value.toLowerCase();
 
-  for (const i = 0; i < tbody.childNodes.length; i++) {
-    const achou = false;
-    const tr = tbody.childNodes[i];
-    const td = tr.childNodes;
-
-    for (const j = 0; j < td.length; j++) {
-      const value = td[j].childNodes[0].nodeValue.toLowerCase();
+  for (let i = 0; i < tbody.children.length; i++) {
+    let achou = false;
+    let tr = tbody.children[i];
+    let td = tr.children;
+    
+    for (let j = 0; j < td.length-1; j++) {
+      let value = td[j].childNodes[0].nodeValue.toLowerCase();
       if (value.indexOf(busca) >= 0) {
         //indexOf procura uma ocorrencia
         achou = true;
