@@ -183,16 +183,18 @@ updateTable();
 /*BUSCAR***********************/
 /******************************/
 
-document.getElementById("txtSearch").addEventListener("keyup", function () {
-  let busca = document.getElementById("txtSearch").value.toLowerCase();
+const searchClient = () => {
+  const busca = document.getElementById("txtSearch").value.toLowerCase();
 
   for (let i = 0; i < tbody.children.length; i++) {
-    let achou = false;
-    let tr = tbody.children[i];
-    let td = tr.children;
+    let achou = false; //tipo let pra ser reatribuído depois
+    const tr = tbody.children[i];
+    const td = tr.children;
+    //childNodes não deu certo, pois ele pegou elementos text nodes e comentários nodes
+    //children retorna apenas elementos
     
     for (let j = 0; j < td.length-1; j++) {
-      let value = td[j].childNodes[0].nodeValue.toLowerCase();
+      const value = td[j].childNodes[0].nodeValue.toLowerCase();
       if (value.indexOf(busca) >= 0) {
         //indexOf procura uma ocorrencia
         achou = true;
@@ -201,14 +203,16 @@ document.getElementById("txtSearch").addEventListener("keyup", function () {
     if (achou) {
       tr.style.display = "table-row";
     } else {
-      tr.style.display = "none";
+      tr.style.display = "none"; //oculta
     }
   }
-});
+};
 
 /*********************************************************************************************/
 /*EVENTOS*************************************************************************************/
 /*********************************************************************************************/
+document
+  .getElementById("txtSearch").addEventListener("keyup", searchClient)
 
 document
   .getElementById("cadastrarCliente")
