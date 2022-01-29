@@ -52,7 +52,7 @@ footer{
     padding: 20px;
 }
 
-@media (max-width:480px){
+@media (max-width:720px){
     header{
         position:fixed;
         width:100%;
@@ -63,7 +63,7 @@ footer{
 
     main{
         padding: 0;
-        margin: 20px 0 0 0;
+        margin: 85px 0 0 0;
         width:100%;
         box-shadow: none;
     }
