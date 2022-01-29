@@ -204,6 +204,7 @@ const searchClient = () => {
       tr.style.display = "table-row";
     } else {
       tr.style.display = "none"; //oculta
+      tr.style.display = "none"; //ocultar
     }
   }
 };
