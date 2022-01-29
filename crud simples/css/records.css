@@ -27,7 +27,7 @@
     background-color: var(--secundary-color);
 }
 
-@media(max-width:865px){
+@media(max-width:480px){
     .records{
         border-spacing: 5px;
     }
@@ -37,20 +37,16 @@
     .records tr{
         box-shadow: 0 1px 3px var(--shadow-color);
     }
-    .records td{
+    .records td:not(:first-child){
         display:flex;
         justify-content: space-between;
         padding: 0 20px;
     }
+
     .records td{
         margin:10px 0;
     }
-    .records .button.red{
-        margin-right: 20px;
-    }
-    .records .button.green{
-        margin-left: 20px;
-    }
+
     .records tr:hover{
         background-color: inherit;
     }
