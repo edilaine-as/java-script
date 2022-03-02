@@ -1,7 +1,15 @@
+/*
+	Contribuidor: Eduardo Programador (www.eduardoprogramador.com)
+	Github: https://github.com/eduprogrammer
+*/
+
 let num = document.querySelector('#fnum')
 let lista = document.querySelector('#flista')
 let res = document.querySelector('#res')
 let valores = []
+let pares = []
+let impares = []
+let status = ""
 
 function isNumero(n){
     if(Number(n)>=1 && Number(n)<=100){
@@ -25,9 +33,16 @@ function adicionar(){
 
     if(isNumero(num.value) && !inLista(num.value, valores)){ //! é não pertence, sinal de negação
         valores.push(Number(num.value)) //push para adicionar em vetor
-
+	if((Number(num.value) % 2) == 0) {
+		pares.push(Number(num.value))
+		status = "Par"
+	} else {
+		impares.push(Number(num.value))
+		status = "Ímpar"
+	}
+	
         let item = document.createElement('option')
-        item.text = `Valor ${num.value} foi adicionado`
+        item.text = `Valor ${num.value} foi adicionado (${status})`
         lista.appendChild(item)
         res.innerHTML = ''
     }
@@ -68,6 +83,8 @@ function finalizar(){
         res.innerHTML += `<p>O maior valor é ${maior}</p>`
         res.innerHTML += `<p>Somando todos os valores, temos ${soma}</p>`
         res.innerHTML += `<p>A média é ${media}</p>`
+	res.innerHTML += `<p>O total de pares é ${pares.length}</p>`
+	res.innerHTML += `<p>O total de ímpares é ${impares.length}</p>`
     }
 }
 

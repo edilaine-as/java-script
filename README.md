@@ -6,7 +6,7 @@ Projetos (do mais recente pro mais antigo):
 
 <ul>
   <li><a href="https://edilaine-as.github.io/java-script/crud simples/index.html" target="_blank">Cadastro de Clientes</a></li>
-  <li><a href="https://edilaine-as.github.io/java-script/analisador-numeros/index.html" target="_blank">Analisador de dados</a></li>
+  <li><a href="https://edilaine-as.github.io/java-script/analisador-numeros/index.html" target="_blank">Analisador de dados (atualizado em 02/03/2022)</a></li>
   <li><a href="https://edilaine-as.github.io/java-script/tabuada/index.html" target="_blank">Tabuada</a></li>
   <li><a href="https://edilaine-as.github.io/java-script/repeticao/index.html" target="_blank">Contador</a></li>
   <li><a href="https://edilaine-as.github.io/java-script/verificador-idade/index.html" target="_blank">Verificador de idade</a></li>
